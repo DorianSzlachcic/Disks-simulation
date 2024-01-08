@@ -7,6 +7,11 @@ FetchContent_Declare(SFML
     GIT_TAG 2.6.x)
 FetchContent_MakeAvailable(SFML)
 
-add_executable(Disks src/main.cpp)
+file(GLOB SrcFiles
+     "src/*.h"
+     "src/*.cpp"
+)
+
+add_executable(Disks ${SrcFiles})
 target_link_libraries(Disks PRIVATE sfml-graphics)
 target_compile_features(Disks PRIVATE cxx_std_17)
