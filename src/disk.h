@@ -16,4 +16,9 @@ private:
     sf::CircleShape shape;
     sf::RenderWindow& window;
     sf::Vector2f velocity;
+
+    double mass;
+    bool dragged = false;
+
+    void move();
 };
